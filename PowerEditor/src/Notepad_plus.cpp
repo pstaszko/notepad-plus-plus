@@ -6456,20 +6456,20 @@ void Notepad_plus::notifyBufferChanged(Buffer * buffer, int mask)
 				scnN.nmhdr.idFrom = (uptr_t)buffer->getID();
 				_pluginsManager.notify(&scnN);
 
-				int doCloseDoc = doCloseOrNot(buffer->getFullPathName()) == IDNO;
-				if (doCloseDoc)
-				{
-					//close in both views, doing current view last since that has to remain opened
-					bool isSnapshotMode = nppGUI.isSnapshotMode();
-					doClose(buffer->getID(), otherView(), isSnapshotMode);
-					doClose(buffer->getID(), currentView(), isSnapshotMode);
-					return;
-				}
-				else
-				{
-					// buffer in Notepad++ is not syncronized anymore with the file on disk
+				//int doCloseDoc = doCloseOrNot(buffer->getFullPathName()) == IDNO;
+				//if (doCloseDoc)
+				//{
+				//	//close in both views, doing current view last since that has to remain opened
+				//	bool isSnapshotMode = nppGUI.isSnapshotMode();
+				//	doClose(buffer->getID(), otherView(), isSnapshotMode);
+				//	doClose(buffer->getID(), currentView(), isSnapshotMode);
+				//	return;
+				//}
+				//else
+				//{
+				//	// buffer in Notepad++ is not syncronized anymore with the file on disk
 					buffer->setUnsync(true);
-				}
+				//}
 
 				break;
 			}

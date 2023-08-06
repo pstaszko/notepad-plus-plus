@@ -1054,23 +1054,23 @@ bool Notepad_plus::fileCloseAll(bool doDeleteBackup, bool isSnapshotMode)
 					if (!activateBuffer(id, SUB_VIEW))
 						switchEditViewTo(MAIN_VIEW);
 
-					int res = _nativeLangSpeaker.messageBox("NoBackupDoSaveFile",
-						_pPublicInterface->getHSelf(),
-						TEXT("Your backup file cannot be found (deleted from outside).\rSave it otherwise your data will be lost\rDo you want to save file \"$STR_REPLACE$\" ?"),
-						TEXT("Save"),
-						MB_YESNOCANCEL | MB_ICONQUESTION | MB_APPLMODAL,
-						0, // not used
-						buf->getFullPathName());
+					//int res = _nativeLangSpeaker.messageBox("NoBackupDoSaveFile",
+					//	_pPublicInterface->getHSelf(),
+					//	TEXT("Your backup file cannot be found (deleted from outside).\rSave it otherwise your data will be lost\rDo you want to save file \"$STR_REPLACE$\" ?"),
+					//	TEXT("Save"),
+					//	MB_YESNOCANCEL | MB_ICONQUESTION | MB_APPLMODAL,
+					//	0, // not used
+					//	buf->getFullPathName());
 
-					if (res == IDYES)
-					{
+					//if (res == IDYES)
+					//{
 						if (!fileSave(id))
 							return false;	//abort entire procedure
-					}
-					else if (res == IDCANCEL)
-					{
-						return false;
-					}
+					//}
+					//else if (res == IDCANCEL)
+					//{
+					//	return false;
+					//}
 				}
 			}
 			else
@@ -1137,23 +1137,23 @@ bool Notepad_plus::fileCloseAll(bool doDeleteBackup, bool isSnapshotMode)
 					activateBuffer(id, SUB_VIEW);
 					switchEditViewTo(SUB_VIEW);
 
-					int res = _nativeLangSpeaker.messageBox("NoBackupDoSaveFile",
-						_pPublicInterface->getHSelf(),
-						TEXT("Your backup file cannot be found (deleted from outside).\rSave it otherwise your data will be lost\rDo you want to save file \"$STR_REPLACE$\" ?"),
-						TEXT("Save"),
-						MB_YESNOCANCEL | MB_ICONQUESTION | MB_APPLMODAL,
-						0, // not used
-						buf->getFullPathName());
+					//int res = _nativeLangSpeaker.messageBox("NoBackupDoSaveFile",
+					//	_pPublicInterface->getHSelf(),
+					//	TEXT("Your backup file cannot be found (deleted from outside).\rSave it otherwise your data will be lost\rDo you want to save file \"$STR_REPLACE$\" ?"),
+					//	TEXT("Save"),
+					//	MB_YESNOCANCEL | MB_ICONQUESTION | MB_APPLMODAL,
+					//	0, // not used
+					//	buf->getFullPathName());
 
-					if (res == IDYES)
-					{
+					//if (res == IDYES)
+					//{
 						if (!fileSave(id))
 							return false;	//abort entire procedure
-					}
-					else if (res == IDCANCEL)
-					{
-						return false;
-					}
+					//}
+					//else if (res == IDCANCEL)
+					//{
+					//	return false;
+					//}
 				}
 			}
 			else
