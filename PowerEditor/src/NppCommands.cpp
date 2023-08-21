@@ -1880,11 +1880,11 @@ void Notepad_plus::command(int id)
 			break;
 
 		case IDM_EDIT_PROPERCASE_FORCE:
-			_pEditView->convertSelectedTextToNewerCase(TITLECASE_FORCE);
+			_pEditView->convertSelectedTextToNewerCase(PROPERCASE_FORCE);
 			break;
 
 		case IDM_EDIT_PROPERCASE_BLEND:
-			_pEditView->convertSelectedTextToNewerCase(TITLECASE_BLEND);
+			_pEditView->convertSelectedTextToNewerCase(PROPERCASE_BLEND);
 			break;
 
 		case IDM_EDIT_SENTENCECASE_FORCE:
@@ -3486,7 +3486,7 @@ void Notepad_plus::command(int id)
 					else
 					{
 						param = TEXT("-verbose -v");
-						param += VERSION_VALUE;
+						param += VERSION_INTERNAL_VALUE;
 						int archType = NppParameters::getInstance().archType();
 						if (archType == IMAGE_FILE_MACHINE_AMD64)
 						{
